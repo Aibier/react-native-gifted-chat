@@ -91,9 +91,9 @@ export default class Bubble extends React.PureComponent {
   }
 
   renderTicks() {
-    const { currentMessage } = this.props;
+    const { currentMessage, position } = this.props;
     if (this.props.renderTicks) {
-      return this.props.renderTicks(currentMessage);
+      return this.props.renderTicks(currentMessage, position);
     }
     if (currentMessage.user._id !== this.props.user._id) {
       return null;
@@ -134,8 +134,6 @@ export default class Bubble extends React.PureComponent {
           style={[
             styles[this.props.position].wrapper,
             this.props.wrapperStyle[this.props.position],
-            this.handleBubbleToNext(),
-            this.handleBubbleToPrevious(),
           ]}
         >
           <TouchableWithoutFeedback

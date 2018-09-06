@@ -93,7 +93,7 @@ export default class Message extends React.PureComponent {
           <View
             style={[
               styles[this.props.position].container,
-              { marginBottom: sameUser ? 2 : 10 },
+              { marginBottom: sameUser ? 2 : 2 },
               !this.props.inverted && { marginBottom: 2 },
               this.props.containerStyle[this.props.position],
             ]}
